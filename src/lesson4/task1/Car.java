@@ -1,6 +1,6 @@
 package lesson4.task1;
 
-public class Car implements Movable{
+public class Car implements Movable {
     private int weight;
     private int price;
 
