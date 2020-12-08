@@ -9,7 +9,7 @@ public class Jewels {
         System.out.println(num);
     }
 
-    public static int numJewelsInStones(String jewel, String stone){
+    public static int numJewelsInStones(String jewel, String stone) {
         char[] jewels = jewel.toCharArray();
         char[] stones = stone.toCharArray();
         int num = 0;
