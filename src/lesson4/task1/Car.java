@@ -9,5 +9,11 @@ public class Car {
         this.price = price;
     }
 
+    public int getWeight() {
+        return weight;
+    }
 
+    public int getPrice() {
+        return price;
+    }
 }
