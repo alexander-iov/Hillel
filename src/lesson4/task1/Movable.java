@@ -1,7 +1,10 @@
 package lesson4.task1;
 
 public interface Movable {
-    void move();
+
+    default void move(){
+        System.out.println("Еду");
+    }
     void stop();
     void moveLeft();
     void moveRight();
