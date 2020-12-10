@@ -5,7 +5,8 @@ import java.util.Arrays;
 public class ArraySorting {
     public static void main(String[] args) {
         int[] array = {0, 2, 4, -10, -16, 8, 7, 3, 1, 11};
-        calcArrayPow(sorting(array));
+        int[] sortArray = sorting(array);
+        calcArrayPow(sorting(sortArray));
     }
 
     public static void calcArrayPow(int[] array) {
