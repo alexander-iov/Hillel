@@ -4,6 +4,11 @@ public class Liquid {
     private int density;
     private String color;
 
+    Liquid(int density, String color){
+        this.density = density;
+        this.color = color;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {

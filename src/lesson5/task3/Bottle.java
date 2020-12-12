@@ -6,6 +6,12 @@ public class Bottle {
     private Liquid liquid;
     private boolean isCarbonated;
 
+    Bottle(int volume, boolean isCarbonated, int density, String color){
+        this.volume = volume;
+        this.isCarbonated = isCarbonated;
+        setLiquid(density, color);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -18,6 +24,11 @@ public class Bottle {
         return volume == bottle.volume &&
                 isCarbonated == bottle.isCarbonated &&
                 liquid.equals(bottle.liquid);
+    }
+
+    private Liquid setLiquid(int density, String color){
+        liquid = new Liquid(density, color);
+        return liquid;
     }
 
 }
