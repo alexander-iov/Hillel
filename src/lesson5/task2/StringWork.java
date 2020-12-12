@@ -1,4 +1,4 @@
 package lesson5.task2;
 
-public class SringWork {
+public class StringWork {
 }
