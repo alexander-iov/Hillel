@@ -1,10 +1,12 @@
 package lesson5.task2;
 
 public class StringWork {
+
     public static void main(String[] args) {
-        String word = "abcCde";
+        String word = "AbCde";
         System.out.println(findCentralSymbol(word));
         System.out.println(reverse(word));
+        System.out.println(invert(word));
     }
 
     public static String findCentralSymbol(String word) {
@@ -27,6 +29,20 @@ public class StringWork {
             str = second + third + first;
         }
         return str;
+    }
+
+    public static String invert(String str){
+        StringBuilder stringBuilder = new StringBuilder();
+        char[] chars = str.toCharArray();
+        for (char c : chars){
+            if (Character.isLowerCase(c)){
+                c = Character.toUpperCase(c);
+            }else if (Character.isUpperCase(c)){
+                c = Character.toLowerCase(c);
+            }
+            stringBuilder.append(c);
+        }
+        return stringBuilder.toString();
     }
 
 }
