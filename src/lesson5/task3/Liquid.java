@@ -1,8 +1,8 @@
 package lesson5.task3;
 
 public class Liquid {
-    private int density;
-    private String color;
+    private final int density;
+    private final String color;
 
     Liquid(int density, String color) {
         this.density = density;

@@ -2,9 +2,9 @@ package lesson5.task3;
 
 public class Bottle {
 
-    private int volume;
+    private final int volume;
     private Liquid liquid;
-    private boolean isCarbonated;
+    private final boolean isCarbonated;
 
     Bottle(int volume, boolean isCarbonated, int density, String color) {
         this.volume = volume;
@@ -26,9 +26,8 @@ public class Bottle {
                 liquid.equals(bottle.liquid);
     }
 
-    private Liquid setLiquid(int density, String color) {
+    private void setLiquid(int density, String color) {
         liquid = new Liquid(density, color);
-        return liquid;
     }
 
 }
