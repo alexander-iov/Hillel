@@ -6,11 +6,11 @@ public class Main {
         Bottle bottle2 = new Bottle(500, true, 20, "GREEN");
         Bottle bottle3 = new Bottle(500, false, 15, "RED");
 
-        Bottle[] bottles = new Bottle[] {bottle1,bottle2,bottle3};
+        Bottle[] bottles = new Bottle[]{bottle1, bottle2, bottle3};
 
-        for (int i = 0; i < bottles.length; i++){
-            for (int j = 0; j < bottles.length; j++){
-                if (i == j){
+        for (int i = 0; i < bottles.length; i++) {
+            for (int j = 0; j < bottles.length; j++) {
+                if (i == j) {
                     continue;
                 }
                 boolean a = bottles[i].equals(bottles[j]);

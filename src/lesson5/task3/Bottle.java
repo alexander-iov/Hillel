@@ -6,7 +6,7 @@ public class Bottle {
     private Liquid liquid;
     private boolean isCarbonated;
 
-    Bottle(int volume, boolean isCarbonated, int density, String color){
+    Bottle(int volume, boolean isCarbonated, int density, String color) {
         this.volume = volume;
         this.isCarbonated = isCarbonated;
         setLiquid(density, color);
@@ -26,7 +26,7 @@ public class Bottle {
                 liquid.equals(bottle.liquid);
     }
 
-    private Liquid setLiquid(int density, String color){
+    private Liquid setLiquid(int density, String color) {
         liquid = new Liquid(density, color);
         return liquid;
     }
