@@ -2,7 +2,7 @@ package lesson5.task1;
 
 public class Calculator {
 
-    public int plus(int a, int b){
+    public double multiply(double a, double b) {
         return a + b;
     }
 }
