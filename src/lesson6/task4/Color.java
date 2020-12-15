@@ -9,7 +9,7 @@ public enum Color {
     private int g;
     private int b;
 
-    Color(String hex){
+    Color(String hex) {
         this.hex = hex;
         int[] rgb = hexToRGB(hex);
         this.r = rgb[0];
@@ -28,16 +28,16 @@ public enum Color {
         return hex;
     }
 
-    public String rgbToHex(int r, int g, int b){
-        return String.format( "#%02x%02x%02x", r, g, b );
+    public String rgbToHex(int r, int g, int b) {
+        return String.format("#%02x%02x%02x", r, g, b);
     }
 
-    public int[] hexToRGB(String hex){
+    public int[] hexToRGB(String hex) {
         String newHex = hex.replace("#", "");
         return new int[]{
-                Integer.valueOf(newHex.substring(0,2),16),
-                Integer.valueOf(newHex.substring(2,4),16),
-                Integer.valueOf(newHex.substring(4,6),16)
+                Integer.valueOf(newHex.substring(0, 2), 16),
+                Integer.valueOf(newHex.substring(2, 4), 16),
+                Integer.valueOf(newHex.substring(4, 6), 16)
         };
     }
 }
