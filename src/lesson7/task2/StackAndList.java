@@ -1,9 +1,17 @@
 package lesson7.task2;
 
 public class StackAndList implements IStack, IList {
+
+    private int[] stack = new int[10];
+    private int topOfStack = -1;
+
+    private int[] list = new int[10];
+    private int nextIndex = 0;
+
     @Override
     public void add(int i) {
-
+        list[nextIndex] = i;
+        nextIndex++;
     }
 
     @Override
@@ -13,26 +21,27 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public void set(int index, int value) {
-
+        list[index] = value;
     }
 
     @Override
     public int size() {
-        return 0;
+        return nextIndex;
     }
 
     @Override
     public int capacity() {
-        return 0;
+        return list.length;
     }
 
     @Override
     public int getByIndex(int index) {
-        return 0;
+        return list[index];
     }
 
     @Override
     public Integer getIndexByValue(int value) {
+
         return null;
     }
 
@@ -63,16 +72,19 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public void push(int value) {
-
+        topOfStack++;
+        stack[topOfStack] = value;
     }
 
     @Override
     public int pop() {
-        return 0;
+        int value = stack[topOfStack];
+        topOfStack--;
+        return value;
     }
 
     @Override
     public int peek() {
-        return 0;
+        return stack[topOfStack];
     }
 }
