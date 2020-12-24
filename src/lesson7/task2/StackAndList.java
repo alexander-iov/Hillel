@@ -12,6 +12,10 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public void insert(int index, int value) {
+        if (nums.length - index + 1 >= 0) {
+            System.arraycopy(nums, index + 1 + 1, nums, index + 1, nums.length - index + 1);
+        }
+        nums[index] = value;
     }
 
     @Override
@@ -36,34 +40,45 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public Integer getIndexByValue(int value) {
-        return null;
+        Integer index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == value) {
+                index = i;
+            }
+        }
+        return index;
     }
 
     @Override
     public boolean contains(int value) {
         boolean con = true;
         for (int num : nums) {
-            if (num == value) {
-                con = true;
-            } else {
-                con = false;
-            }
+            con = num == value;
         }
         return con;
     }
 
     @Override
     public void removeValue(int value) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == value) {
+                nums[i] = nums[i + 1];
+            }
+        }
+        nextIndex--;
     }
 
     @Override
     public void removeByIndex(int index) {
+        if (nums.length - index >= 0) {
+            System.arraycopy(nums, index + 1, nums, index, nums.length - index);
+        }
     }
 
     @Override
     public IList subList(int fromIndex, int toIndex) {
         IList newList = new StackAndList();
-        for (int i = fromIndex; i < toIndex; i++){
+        for (int i = fromIndex; i < toIndex; i++) {
             newList.add(i);
         }
         return newList;
