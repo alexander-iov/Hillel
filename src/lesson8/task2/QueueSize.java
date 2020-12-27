@@ -10,10 +10,16 @@ public class QueueSize {
         for (String str : strings) {
             queue.offer(str);
         }
+        System.out.println(sizeValidation(queue));
     }
 
-    public static Queue<String> sizeValidation(Queue<String> queue){
-
-        return new LinkedList<>();
+    public static Queue<String> sizeValidation(Queue<String> queue) {
+        Queue<String> queue1 = new LinkedList<>();
+        for (String element : queue) {
+            if (element.length() <= 4) {
+                queue1.offer(element);
+            }
+        }
+        return queue1;
     }
 }

@@ -14,9 +14,9 @@ public class QueueReverse {
         System.out.println(reverse(queue));
     }
 
-    public static Queue<String> reverse(Queue<String> queue){
+    public static Queue<String> reverse(Queue<String> queue) {
         Deque<String> queue1 = new LinkedList<>();
-        for (String element : queue){
+        for (String element : queue) {
             queue1.addFirst(element);
         }
         return queue1;
