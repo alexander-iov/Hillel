@@ -9,9 +9,8 @@ public class Recursion {
     public static void showArray(int[] array, int position) {
         if (position >= array.length) {
             return;
-        } else {
-            System.out.println(array[position]);
         }
+        System.out.println(array[position]);
         showArray(array, position + 1);
     }
 }
