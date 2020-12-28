@@ -2,7 +2,7 @@ package lesson7.task2;
 
 public class StackAndList implements IStack, IList {
 
-    private int[] nums = new int[10];
+    private int[] numbers = new int[10];
     private int nextIndex = 0;
 
     @Override
@@ -12,15 +12,15 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public void insert(int index, int value) {
-        if (nums.length - index + 1 >= 0) {
-            System.arraycopy(nums, index + 1 + 1, nums, index + 1, nums.length - index + 1);
+        if (numbers.length - index + 1 >= 0) {
+            System.arraycopy(numbers, index + 1 + 1, numbers, index + 1, numbers.length - index + 1);
         }
-        nums[index] = value;
+        numbers[index] = value;
     }
 
     @Override
     public void set(int index, int value) {
-        nums[index] = value;
+        numbers[index] = value;
     }
 
     @Override
@@ -30,20 +30,21 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public int capacity() {
-        return nums.length;
+        return numbers.length;
     }
 
     @Override
     public int getByIndex(int index) {
-        return nums[index];
+        return numbers[index];
     }
 
     @Override
     public Integer getIndexByValue(int value) {
         Integer index = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == value) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == value) {
                 index = i;
+                break;
             }
         }
         return index;
@@ -51,18 +52,22 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public boolean contains(int value) {
-        boolean con = true;
-        for (int num : nums) {
-            con = num == value;
+        boolean con = false;
+        for (int num : numbers){
+            if (num == value){
+                con = true;
+                break;
+            }
         }
         return con;
     }
 
     @Override
     public void removeValue(int value) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == value) {
-                nums[i] = nums[i + 1];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == value) {
+                removeByIndex(i);
+                break;
             }
         }
         nextIndex--;
@@ -70,8 +75,8 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public void removeByIndex(int index) {
-        if (nums.length - index >= 0) {
-            System.arraycopy(nums, index + 1, nums, index, nums.length - index);
+        if (numbers.length - index >= 0) {
+            System.arraycopy(numbers, index + 1, numbers, index, numbers.length - index);
         }
     }
 
@@ -87,25 +92,26 @@ public class StackAndList implements IStack, IList {
     @Override
     public int[] toArray() {
         int[] array = new int[10];
-        System.arraycopy(nums, 0, array, 0, nums.length);
+        System.arraycopy(numbers, 0, array, 0, numbers.length);
         return array;
     }
 
     @Override
     public void push(int value) {
-        nums[nextIndex] = value;
+        numbers[nextIndex] = value;
         nextIndex++;
     }
 
     @Override
     public int pop() {
-        int value = nums[nextIndex];
+        int value = numbers[nextIndex];
+        removeByIndex(nextIndex);
         nextIndex--;
         return value;
     }
 
     @Override
     public int peek() {
-        return nums[nextIndex];
+        return numbers[nextIndex];
     }
 }
