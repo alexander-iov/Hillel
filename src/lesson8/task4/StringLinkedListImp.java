@@ -1,6 +1,8 @@
 package lesson8.task4;
 
-public class StringLinkedListImp implements StringLinkedList{
+public class StringLinkedListImp implements StringLinkedList {
+    private Node node;
+
     @Override
     public void addFirst(String s) {
 
