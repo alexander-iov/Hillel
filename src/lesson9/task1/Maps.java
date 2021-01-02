@@ -1,7 +1,6 @@
 package lesson9.task1;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Maps {
     public static void main(String[] args) {
@@ -16,5 +15,16 @@ public class Maps {
         maps.put("h", 8);
         maps.put("j", 9);
         maps.put("k", 10);
+        System.out.println(maps);
+        System.out.println(reverse(maps));
+    }
+
+    public static Map<Integer, String> reverse(Map<String, Integer> map) {
+        Map<Integer, String> newMaps = new HashMap<>();
+        String[] keys = map.keySet().toArray(new String[0]);
+        for (int i = 0; i < map.size(); i++) {
+            newMaps.put(map.get(keys[i]), keys[i]);
+        }
+        return newMaps;
     }
 }
