@@ -5,7 +5,7 @@ package lesson10.task1;
  * @version 1.0.1
  */
 
-public class Employee implements Comparable<Employee>{
+public class Employee implements Comparable<Employee> {
 
     private static int idsCounter;
     private int id;
@@ -13,13 +13,13 @@ public class Employee implements Comparable<Employee>{
     private String lastName;
     private double salary;
 
-    Employee(String firstName, String lastName) {
+    public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         id = ++idsCounter;
     }
 
-    Employee(String firstName, String lastName, double salary) {
+    public Employee(String firstName, String lastName, double salary) {
         this(firstName, lastName);
         this.salary = salary;
     }
@@ -32,11 +32,25 @@ public class Employee implements Comparable<Employee>{
         return firstName;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
     @Override
     public int compareTo(Employee o) {
-        if (this.id < o.id){
+        if (this.id < o.id) {
             return -1;
-        }else if (this.id == o.id){
+        } else if (this.id == o.id) {
             return 0;
         }
         return 1;
