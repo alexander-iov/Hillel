@@ -1,12 +1,13 @@
 package lesson12;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
         Report report = new Report();
-        ArrayList<Row> rows = new ArrayList<>();
+        List<Row> rows = new ArrayList<>();
 
         Row row1 = new Row();
         row1.cells[0] = "a";
