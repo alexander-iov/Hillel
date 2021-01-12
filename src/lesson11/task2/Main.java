@@ -13,7 +13,7 @@ public class Main {
             } catch (DivideByZeroException e) {
                 try {
                     divide(numbers);
-                } catch (DivideByZeroException | ArrayIndexOutOfBoundsException ex){
+                } catch (DivideByZeroException | ArrayIndexOutOfBoundsException ex) {
                     System.out.println(ex.getMessage());
                 }
             }
@@ -32,7 +32,7 @@ public class Main {
         System.out.println(numbers[firstIndex] / numbers[secondIndex]);
     }
 
-    private static int random(int[] numbers){
+    private static int random(int[] numbers) {
         Random random = new Random();
         return random.nextInt(numbers.length + 1);
     }
