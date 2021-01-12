@@ -22,10 +22,10 @@ public class Main {
 
         report.rows = rows;
 
-        int i = 0;
-        while (i != 2) {
-            Object o = report.rows.get(i);
-            System.out.print(o.cells[0] + " " + o.cells[1] + " " + o.cells[2]);
+        for (Row row : report.rows){
+            for (String cell : row.cells){
+                System.out.print(cell + " ");
+            }
             System.out.println();
         }
     }
