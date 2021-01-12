@@ -6,13 +6,14 @@ public class Main {
 
     public static void main(String[] args) {
         Report report = new Report();
-        ArrayList rows = new ArrayList();
+        ArrayList<Row> rows = new ArrayList<>();
 
         Row row1 = new Row();
         row1.cells[0] = "a";
         row1.cells[1] = "b";
         row1.cells[2] = "c";
         rows.add(row1);
+
         Row row2 = new Row();
         row2.cells[0] = "d";
         row2.cells[1] = "e";
