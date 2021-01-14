@@ -12,9 +12,7 @@ public class Main {
         report.getRows().add(row2);
 
         for (Row row : report.getRows()) {
-            for (String cell : row.getCells()) {
-                System.out.print(cell + " ");
-            }
+            row.printToConsole();
             System.out.println();
         }
     }

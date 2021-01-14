@@ -11,4 +11,10 @@ public class Row {
     public String[] getCells() {
         return cells;
     }
+
+    public void printToConsole() {
+        for (String cell : cells) {
+            System.out.print(cell + " ");
+        }
+    }
 }
