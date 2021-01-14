@@ -5,20 +5,14 @@ public class Main {
     public static void main(String[] args) {
         Report report = new Report();
 
-        Row row1 = new Row();
-        row1.cells[0] = "a";
-        row1.cells[1] = "b";
-        row1.cells[2] = "c";
-        report.rows.add(row1);
+        Row row1 = new Row(new String[]{"a", "b", "c"});
+        report.getRows().add(row1);
 
-        Row row2 = new Row();
-        row2.cells[0] = "d";
-        row2.cells[1] = "e";
-        row2.cells[2] = "f";
-        report.rows.add(row2);
+        Row row2 = new Row(new String[]{"d", "e", "f"});
+        report.getRows().add(row2);
 
-        for (Row row : report.rows){
-            for (String cell : row.cells){
+        for (Row row : report.getRows()) {
+            for (String cell : row.getCells()) {
                 System.out.print(cell + " ");
             }
             System.out.println();

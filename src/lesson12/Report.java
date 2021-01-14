@@ -5,6 +5,9 @@ import java.util.List;
 
 public class Report {
 
-    List<Row> rows = new ArrayList<>();
+    private final List<Row> rows = new ArrayList<>();
 
+    public List<Row> getRows() {
+        return rows;
+    }
 }
