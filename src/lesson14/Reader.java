@@ -12,19 +12,20 @@ public class Reader implements Runnable {
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(1_000);
-            if (numbers.isEmpty()) {
-                System.out.println("The list is empty");
-            } else {
-                for (int num : numbers) {
-                    System.out.println(num);
+        int i = 25;
+        while (i >= 0) {
+            try {
+                Thread.sleep(1_000);
+                if (numbers.isEmpty()) {
+                    System.out.println("The list is empty");
+                } else {
+                    System.out.println(numbers);
                 }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            i--;
         }
-
 
     }
 }

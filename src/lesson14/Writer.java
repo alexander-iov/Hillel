@@ -13,11 +13,15 @@ public class Writer implements Runnable {
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(2_500);
-            numbers.add(random());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        int i = 10;
+        while (i > 0) {
+            try {
+                Thread.sleep(2_500);
+                numbers.add(random());
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            i--;
         }
 
     }
