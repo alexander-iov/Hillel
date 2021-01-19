@@ -20,6 +20,7 @@ public class Reader implements Runnable {
                     System.out.println("The list is empty");
                 } else {
                     System.out.println(numbers);
+                    numbers.clear();
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
