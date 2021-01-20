@@ -6,7 +6,10 @@ import java.util.Locale;
 
 public class Parsing {
     public static void main(String[] args) {
+        String date = "1999/Jun/18 07:34:55 PM";
+
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy/LLL/dd hh:mm:ss a", Locale.US);
-        System.out.println(LocalDateTime.now().format(dateTimeFormatter));
+        LocalDateTime ldt = LocalDateTime.parse(date, dateTimeFormatter);
+        System.out.println(ldt);
     }
 }
