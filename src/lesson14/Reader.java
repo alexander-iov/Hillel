@@ -1,10 +1,12 @@
 package lesson14;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public class Reader implements Runnable {
 
     private List<Integer> numbers;
+    private final LocalDate date = LocalDate.now();
 
     public Reader(List<Integer> numbers) {
         this.numbers = numbers;
@@ -12,12 +14,11 @@ public class Reader implements Runnable {
 
     @Override
     public void run() {
-        int i = 25;
-        while (i >= 0) {
+        while (true) {
             try {
                 Thread.sleep(1_000);
                 if (numbers.isEmpty()) {
-                    System.out.println("The list is empty");
+                    System.out.println(date + " The list is empty");
                 } else {
                     System.out.println(numbers);
                     numbers.clear();
@@ -25,7 +26,6 @@ public class Reader implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            i--;
         }
 
     }
