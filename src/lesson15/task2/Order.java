@@ -12,8 +12,8 @@ public abstract class Order {
         this.number = number;
     }
 
-    abstract void confirm();
+    public abstract void confirm();
 
-    abstract void close();
+    public abstract void close();
 
 }
