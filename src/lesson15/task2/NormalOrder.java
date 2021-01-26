@@ -10,12 +10,12 @@ public class NormalOrder extends Order {
 
     @Override
     public void confirm() {
-        System.out.println("Confirm an order");
+        System.out.println("An order was confirmed");
     }
 
     @Override
     public void close() {
-        System.out.println("Close an order");
+        System.out.println("An order was closed");
     }
 
     public void dispatch() {
