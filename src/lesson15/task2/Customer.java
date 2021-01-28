@@ -1,10 +1,11 @@
 package lesson15.task2;
 
+import java.util.Objects;
+
 public class Customer {
 
     private String name;
     private String location;
-    private Order order;
 
     public Customer(String name, String location) {
         this.name = name;
@@ -19,4 +20,17 @@ public class Customer {
         System.out.println("An order was received");
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return name.equals(customer.name) &&
+                location.equals(customer.location);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, location);
+    }
 }
