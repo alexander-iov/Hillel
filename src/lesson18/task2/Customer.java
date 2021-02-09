@@ -1,10 +1,10 @@
 package lesson18.task2;
 
 public class Customer {
-    private int Id;
+    private final int id;
     private static int countId;
 
     public Customer() {
-        Id = ++countId;
+        id = ++countId;
     }
 }
