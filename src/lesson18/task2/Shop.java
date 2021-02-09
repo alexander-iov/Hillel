@@ -4,6 +4,7 @@ import java.util.Queue;
 import java.util.TimerTask;
 
 public class Shop extends TimerTask {
+
     private static final int MAX_CAPACITY = 5;
     private static boolean isOpen;
     private static Queue<Customer> queue;
@@ -47,7 +48,7 @@ public class Shop extends TimerTask {
 
         @Override
         public void run() {
-            if (queue.size() > 1) {
+            if (queue.size() >= 1) {
                 queue.remove();
                 System.out.println("Покупатель ушел. Клиентов: " + queue.size());
             }
