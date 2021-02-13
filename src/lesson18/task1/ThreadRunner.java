@@ -1,5 +1,7 @@
 package lesson18.task1;
 
+import java.time.LocalDateTime;
+
 public class ThreadRunner {
 
     private static volatile String[] strings;
@@ -40,6 +42,9 @@ public class ThreadRunner {
                     strings[i] = "Fizz";
                 } else {
                     strings[i] = String.valueOf(i);
+                }
+                if (i % 1_000_000 == 0) {
+                    System.out.println(i + " " + LocalDateTime.now());
                 }
             }
         }

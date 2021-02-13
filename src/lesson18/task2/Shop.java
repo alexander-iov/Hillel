@@ -9,8 +9,8 @@ public class Shop extends TimerTask {
     private static boolean isOpen;
     private static Queue<Customer> queue;
 
-    public Shop(boolean isOpen, Queue<Customer> queue) {
-        Shop.isOpen = isOpen;
+    public Shop(Queue<Customer> queue) {
+        isOpen = true;
         Shop.queue = queue;
         System.out.println("Магазин открылся");
     }

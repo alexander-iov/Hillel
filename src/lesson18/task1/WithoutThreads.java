@@ -3,7 +3,7 @@ package lesson18.task1;
 public class WithoutThreads {
     public static void main(String[] args) {
         long l = System.currentTimeMillis();
-        String[] strings = new String[10000000];
+        String[] strings = new String[10_000_000];
         for (int i = 0; i < strings.length; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 strings[i] = "BuzzFizz";
