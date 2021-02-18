@@ -1,1 +1,1 @@
-# Tasks Form Hillel Java Elementary lessons.
+# Tasks from Hillel's Java Elementary lessons.
