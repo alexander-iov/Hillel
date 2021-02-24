@@ -1,6 +1,6 @@
 package lesson23.task2;
 
-import lesson3.Employee;
+import lesson23.task3.Ignore;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -18,12 +18,14 @@ public class Main {
         Object o = declaredConstructor.newInstance();
         Field[] declaredFields = aClass.getDeclaredFields();
         for (Field declaredField : declaredFields) {
-            declaredField.setAccessible(true);
-            int modifiers = declaredField.getModifiers();
-            System.out.println(Modifier.toString(modifiers) + " " +
-                    declaredField.getType() + " " +
-                    declaredField.getName() + " " +
-                    declaredField.get(o));
+            if(!declaredField.isAnnotationPresent(Ignore.class)) {
+                declaredField.setAccessible(true);
+                int modifiers = declaredField.getModifiers();
+                System.out.println(Modifier.toString(modifiers) + " " +
+                        declaredField.getType() + " " +
+                        declaredField.getName() + " " +
+                        declaredField.get(o));
+            }
         }
     }
 }
