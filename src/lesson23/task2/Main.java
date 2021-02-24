@@ -8,7 +8,7 @@ import java.lang.reflect.Modifier;
 public class Main {
     public static void main(String[] args) {
         try {
-            info(new Example());
+            info(new Example(100));
         } catch (IllegalAccessException e) {
             e.getStackTrace();
         }

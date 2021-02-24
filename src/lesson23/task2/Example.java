@@ -4,6 +4,11 @@ import lesson23.task3.Ignore;
 
 public class Example {
 
+    public Example(long l){
+        this.l = l;
+    }
+
+    private long l ;
     private final int id = 1;
 
     @Ignore

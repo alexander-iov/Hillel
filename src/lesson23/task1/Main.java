@@ -1,17 +1,11 @@
 package lesson23.task1;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 public class Main {
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
-        Class<Example> exampleClass = Example.class;
-        Constructor<Example> declaredConstructor = exampleClass.getDeclaredConstructor();
-        Example example = declaredConstructor.newInstance();
-        Field s = exampleClass.getDeclaredField("s");
-        s.setAccessible(true);
-        s.set(example, "ABCDE");
-        example.print();
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+        String s = "Hello";
+        s = String.class.getConstructor(String.class).newInstance("ABCDE");
+        System.out.println(s);
     }
 }
