@@ -8,7 +8,7 @@ public class Example {
         this.l = l;
     }
 
-    private long l ;
+    private final long l ;
     private final int id = 1;
 
     @Ignore
