@@ -2,29 +2,28 @@ package lesson23.task2;
 
 import lesson23.task3.Ignore;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Modifier;
 
 public class Main {
-    public static void main(String[] args) throws IllegalAccessException, InvocationTargetException, InstantiationException, NoSuchMethodException {
-       info(new Example());
+    public static void main(String[] args) {
+        try {
+            info(new Example());
+        } catch (IllegalAccessException e) {
+            e.getStackTrace();
+        }
     }
 
-    public static void info(Object object) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class<?> aClass = object.getClass();
-        Constructor<?> declaredConstructor = aClass.getDeclaredConstructor();
-        Object o = declaredConstructor.newInstance();
-        Field[] declaredFields = aClass.getDeclaredFields();
+    public static void info(Object object) throws IllegalAccessException {
+        Field[] declaredFields = object.getClass().getDeclaredFields();
         for (Field declaredField : declaredFields) {
-            if(!declaredField.isAnnotationPresent(Ignore.class)) {
+            if (!declaredField.isAnnotationPresent(Ignore.class)) {
                 declaredField.setAccessible(true);
                 int modifiers = declaredField.getModifiers();
                 System.out.println(Modifier.toString(modifiers) + " " +
                         declaredField.getType() + " " +
                         declaredField.getName() + " " +
-                        declaredField.get(o));
+                        declaredField.get(object));
             }
         }
     }
