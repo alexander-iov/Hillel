@@ -7,7 +7,7 @@ package lesson2;
 
 public class ServiceElevator extends Elevator {
 
-    String[] allItems = { "Bomb", "Washing Machine", "TV", "Bed", "Computer" };
+    String[] allItems = {"Bomb", "Washing Machine", "TV", "Bed", "Computer"};
     String explosiveItem = "Bomb";
 
     ServiceElevator(int maxWeight, double speed) {
@@ -16,29 +16,23 @@ public class ServiceElevator extends Elevator {
 
     @Override
     public boolean moveToFloor(int floor, int weight) {
-        if(weight >= getMaxWeight()){
-            System.out.println("Перегруз лифта");
+        if (explosiveItem.equals(generateRandomItem(allItems))) {
+            System.out.println("Перевозка взрывоопасных предметов - запрещена!");
             return false;
-        }else {
-            if (floor == getFloor()) {
-                System.out.println("Вы находитесь на том же этаже");
-                return false;
-            }else if (floor == 9999) {
-                System.out.println("9999 этаж? Вы серьёзно? На орбиту собрались,Илон?)");
-                return false;
-            }else if ( explosiveItem.equals(generateRandomItem( allItems ))){
-                System.out.println("Перевозка взрывоопасных предметов - запрещена!");
-                return false;
-            }else {
+        } else {
+            if (checkFloor(floor) & checkWeight(weight)) {
                 setFloor(floor);
                 System.out.println("Отправляемся на этаж - " + floor);
                 return true;
+            } else {
+                return false;
             }
         }
+
     }
 
-    private String generateRandomItem(String[] items){
-        int index = (int) ( Math.random()* items.length );
+    private String generateRandomItem(String[] items) {
+        int index = (int) (Math.random() * items.length);
         return items[index];
     }
 }
