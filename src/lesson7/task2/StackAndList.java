@@ -46,14 +46,12 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public Integer getIndexByValue(int value) {
-        Integer index = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == value) {
-                index = i;
-                break;
+        for (int i : numbers) {
+            if (i == value) {
+                return i;
             }
         }
-        return index;
+        return null;
     }
 
     @Override
