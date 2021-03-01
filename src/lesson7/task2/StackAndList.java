@@ -12,10 +12,16 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public void insert(int index, int value) {
-        if (numbers.length - index + 1 >= 0) {
-            System.arraycopy(numbers, index + 1 + 1, numbers, index + 1, numbers.length - index + 1);
+        int[] newArray = new int[numbers.length + 1];
+        if (index != 0) {
+            if (index >= 0) System.arraycopy(numbers, 0, newArray, 0, index + 1);
+            newArray[index] = value;
+            System.arraycopy(numbers, index + 1, newArray, index + 1, newArray.length - index + 1);
+        } else {
+            newArray[index] = value;
+            System.arraycopy(numbers, 0, newArray, index + 1, newArray.length);
         }
-        numbers[index] = value;
+        System.arraycopy(newArray, 0, numbers, 0, numbers.length + 1);
     }
 
     @Override
@@ -53,8 +59,8 @@ public class StackAndList implements IStack, IList {
     @Override
     public boolean contains(int value) {
         boolean con = false;
-        for (int num : numbers){
-            if (num == value){
+        for (int num : numbers) {
+            if (num == value) {
                 con = true;
                 break;
             }
@@ -70,21 +76,26 @@ public class StackAndList implements IStack, IList {
                 break;
             }
         }
-        nextIndex--;
     }
 
     @Override
     public void removeByIndex(int index) {
-        if (numbers.length - index >= 0) {
-            System.arraycopy(numbers, index + 1, numbers, index, numbers.length - index);
+        int[] temp = new int[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == numbers[index]) {
+                continue;
+            }
+            temp[i] = numbers[i];
         }
+        System.arraycopy(temp, 0, numbers, 0, temp.length);
+        nextIndex--;
     }
 
     @Override
     public IList subList(int fromIndex, int toIndex) {
         IList newList = new StackAndList();
         for (int i = fromIndex; i < toIndex; i++) {
-            newList.add(i);
+            newList.add(numbers[i]);
         }
         return newList;
     }
@@ -104,9 +115,8 @@ public class StackAndList implements IStack, IList {
 
     @Override
     public int pop() {
-        int value = numbers[nextIndex];
-        removeByIndex(nextIndex);
-        nextIndex--;
+        int value = numbers[nextIndex - 1];
+        removeByIndex(nextIndex - 1);
         return value;
     }
 
