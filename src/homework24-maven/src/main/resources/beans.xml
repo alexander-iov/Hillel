@@ -1,8 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="deck" class="homework24.Deck"/>
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util-2.5.xsd">
 
+
+    <bean id="deck" class="homework24.Deck">
+        <constructor-arg ref="cards"/>
+    </bean>
+
+    <util:list id="cards">
+        <bean id="aceSpades" class="homework24.Card">
+            <constructor-arg value="Ace"/>
+            <constructor-arg value="Spades"/>
+            <constructor-arg value="true"/>
+        </bean>
+        <bean id="aceDiamonds" class="homework24.Card">
+            <constructor-arg value="Ace"/>
+            <constructor-arg value="Diamonds"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="aceCross" class="homework24.Card">
+            <constructor-arg value="Ace"/>
+            <constructor-arg value="Cross"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="aceHearts" class="homework24.Card">
+            <constructor-arg value="Ace"/>
+            <constructor-arg value="Hearts"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="jackSpades" class="homework24.Card">
+            <constructor-arg value="Jack"/>
+            <constructor-arg value="Spades"/>
+            <constructor-arg value="true"/>
+        </bean>
+        <bean id="jackDiamonds" class="homework24.Card">
+            <constructor-arg value="Jack"/>
+            <constructor-arg value="Diamonds"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="jackCross" class="homework24.Card">
+            <constructor-arg value="Jack"/>
+            <constructor-arg value="Cross"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="jackHearts" class="homework24.Card">
+            <constructor-arg value="Jack"/>
+            <constructor-arg value="Hearts"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="tenSpades" class="homework24.Card">
+            <constructor-arg value="Ten"/>
+            <constructor-arg value="Spades"/>
+            <constructor-arg value="true"/>
+        </bean>
+        <bean id="tenDiamonds" class="homework24.Card">
+            <constructor-arg value="Ten"/>
+            <constructor-arg value="Diamonds"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="tenCross" class="homework24.Card">
+            <constructor-arg value="Ten"/>
+            <constructor-arg value="Cross"/>
+            <constructor-arg value="false"/>
+        </bean>
+        <bean id="tenHearts" class="homework24.Card">
+            <constructor-arg value="Ten"/>
+            <constructor-arg value="Hearts"/>
+            <constructor-arg value="false"/>
+        </bean>
+    </util:list>
 </beans>

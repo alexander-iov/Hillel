@@ -5,17 +5,10 @@ import java.util.Random;
 
 public class Deck {
 
-    private final List<Card> cards;
+    private List<Card> cards;
 
     public Deck(List<Card> cards) {
         this.cards = cards;
-    }
-
-    public void mixingDeck(){
-        for (int i = 0; i < cards.size(); i++){
-            Card card = cards.get(random());
-            cards.add(random(), card);
-        }
     }
 
     public void print(){
@@ -24,8 +17,25 @@ public class Deck {
         }
     }
 
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
+
+    public void mixing(){
+        List<Card> temp = getCards();
+        for (int i = 0; i < temp.size(); i++){
+            Card card = temp.get(random());
+            temp.add(random(), card);
+        }
+        setCards(temp);
+    }
     private int random(){
         Random random = new Random();
         return random.nextInt(cards.size() - 1);
     }
+
 }
