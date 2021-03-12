@@ -11,67 +11,67 @@ import java.util.List;
 public class Config {
 
     @Bean
-    public Deck deck(List<Card> cards){
+    public Deck deck(List<Card> cards) {
         return new Deck(cards);
     }
 
     @Bean("aceSpades")
-    public Card cardAceSpades(){
+    public Card cardAceSpades() {
         return new Card("Ace", "Spades", true);
     }
 
     @Bean("aceHearts")
-    public Card cardAceHearts(){
+    public Card cardAceHearts() {
         return new Card("Ace", "Hearts", false);
     }
 
     @Bean("aceCross")
-    public Card cardAceCross(){
+    public Card cardAceCross() {
         return new Card("Ace", "Cross", false);
     }
 
     @Bean("aceDiamonds")
-    public Card cardAceDiamonds(){
+    public Card cardAceDiamonds() {
         return new Card("Ace", "Diamonds", false);
     }
 
     @Bean("jackSpades")
-    public Card cardJackSpades(){
+    public Card cardJackSpades() {
         return new Card("Jack", "Spades", true);
     }
 
     @Bean("jackHearts")
-    public Card cardJackHearts(){
+    public Card cardJackHearts() {
         return new Card("Jack", "Hearts", false);
     }
 
     @Bean("jackCross")
-    public Card cardJackCross(){
+    public Card cardJackCross() {
         return new Card("Jack", "Cross", false);
     }
 
     @Bean("jackDiamonds")
-    public Card cardJackDiamonds(){
+    public Card cardJackDiamonds() {
         return new Card("Jack", "Diamonds", false);
     }
 
     @Bean("tenSpades")
-    public Card cardTenSpades(){
+    public Card cardTenSpades() {
         return new Card("Ten", "Spades", true);
     }
 
     @Bean("tenHearts")
-    public Card cardTenHearts(){
+    public Card cardTenHearts() {
         return new Card("Ten", "Hearts", false);
     }
 
     @Bean("tenCross")
-    public Card cardTenCross(){
+    public Card cardTenCross() {
         return new Card("Ten", "Cross", false);
     }
 
     @Bean("tenDiamonds")
-    public Card cardTenDiamonds(){
+    public Card cardTenDiamonds() {
         return new Card("Ten", "Diamonds", false);
     }
 }
